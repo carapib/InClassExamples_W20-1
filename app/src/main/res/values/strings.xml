@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">InClassExamples_W20</string>
-</resources>
+    <string name="hello"> Hello world</string>
+
+    </resources>
