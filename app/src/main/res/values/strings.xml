@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">InClassExamples_W20</string>
     <string name="hello"> Hello world</string>
-
+    <string name="checkbox"> This is checkbox</string>
+    <string name="hint"> This hint disappears </string>
+    <string name="switchItUp">This is a switch</string>
+    <string name="radio"> Radio Buttion</string>
 </resources>
