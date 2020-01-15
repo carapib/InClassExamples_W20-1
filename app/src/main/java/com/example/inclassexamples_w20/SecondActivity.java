@@ -21,9 +21,10 @@ public class SecondActivity extends AppCompatActivity {
         String typed = dataSent.getStringExtra("typed");
 
         Button previousButton = findViewById(R.id.previousPageButton);
-        previousButton.setOnClickListener(click ->
-                finish()
-        );
+        previousButton.setOnClickListener(click -> {
+            setResult( 123, dataSent);
+            finish();
+        } );
 
         //Get a format string:
         String toastMessage = getResources().getString(R.string.toastMessage1);
