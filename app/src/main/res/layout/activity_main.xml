@@ -4,36 +4,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello"/>
-
     <EditText
+        android:id="@+id/inputText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint"/>
+        android:layout_height="wrap_content"/>
 
     <Button
+        android:id="@+id/buttonToSecond"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="Button" />
+        android:text="Go to second activity" />
 
-    <CheckBox
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/buttonToThird"
         android:layout_height="wrap_content"
-        android:text="@string/checkbox" />
+        android:layout_width="wrap_content"
+        android:text="Go to third activity" />
 
-    <Switch
-        android:layout_width="match_parent"
+    <Button android:id="@+id/saveButton"
         android:layout_height="wrap_content"
-        android:text="@string/switchItUp" />
-
-    <RadioButton
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/radio"  />
-
-
+        android:text="Save in SharedPreferences"  />
 
 </LinearLayout>
