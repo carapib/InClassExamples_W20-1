@@ -3,6 +3,7 @@ package com.example.inclassexamples_w20;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +24,13 @@ public class SecondActivity extends AppCompatActivity {
         previousButton.setOnClickListener(click ->
                 finish()
         );
+
+        //Get a format string:
+        String toastMessage = getResources().getString(R.string.toastMessage1);
+        //add in the added variables
+        String formattedString = String.format(toastMessage, nameSent, ageSent, typed);
+        //show the toast
+        Toast.makeText(this, formattedString, Toast.LENGTH_LONG);
     }
 
 }
