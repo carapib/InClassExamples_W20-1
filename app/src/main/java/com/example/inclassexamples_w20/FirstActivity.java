@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 public class FirstActivity extends AppCompatActivity {
 
+    SharedPreferences prefs = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,15 +19,14 @@ public class FirstActivity extends AppCompatActivity {
         // Before this function, the screen is empty.
         setContentView(R.layout.activity_main);
 
+        prefs = getSharedPreferences("FileName", Context.MODE_PRIVATE);
+
         EditText editText = findViewById(R.id.inputText);
-        Button secondButton = findViewById(R.id.buttonToSecond);
+        editText.setText(prefs.getString("ReserveName", "Enter something"));
 
-        Intent nextPage = new Intent(this, SecondActivity.class);
-            nextPage.putExtra("name", "Eric");
-            nextPage.putExtra("age", 20);
-            nextPage.putExtra("typed", editText.getText().toString());
+        Button saveButton = findViewById(R.id.buttonToSecond);
 
-        secondButton.setOnClickListener( click -> startActivity( nextPage ));
+        saveButton.setOnClickListener( bt -> saveSharedPrefs( editText.getText().toString()) );
 
     }
 
@@ -55,9 +55,8 @@ public class FirstActivity extends AppCompatActivity {
 
     private void saveSharedPrefs(String stringToSave)
     {
-        SharedPreferences prefs = getSharedPreferences("FileName", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("TypedText", stringToSave);
+        editor.putString("ReserveName", stringToSave);
         editor.commit();
     }
 }
