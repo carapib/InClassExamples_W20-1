@@ -13,6 +13,12 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_second);
+
+        Intent dataSent = getIntent();
+        String nameSent = dataSent.getStringExtra("name");
+        int ageSent = dataSent.getIntExtra("age", 0);
+        String typed = dataSent.getStringExtra("typed");
+
         Button previousButton = findViewById(R.id.previousPageButton);
         previousButton.setOnClickListener(click ->
                 finish()
