@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/firstText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="40dp"
         android:text="@string/hello"/>
 
     <EditText
+        android:id="@+id/firstEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint"/>
 
-    <Button android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/myButton"
+        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="Button" />
+        android:text="hello" />
 
     <CheckBox
+        android:id="@+id/checkb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/checkbox" />

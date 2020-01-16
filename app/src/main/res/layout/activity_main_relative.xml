@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
 
-    <Button
+    <!--Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,6 +24,6 @@
         android:layout_above="@id/button2"
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
-        android:text="@string/item3" />
+        android:text="@string/item3" /-->
 
 </RelativeLayout>
