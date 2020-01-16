@@ -25,7 +25,7 @@ public class FirstActivity extends AppCompatActivity {
             nextPage.putExtra("name", "Eric");
             nextPage.putExtra("age", 20);
             nextPage.putExtra("typed", editText.getText().toString());
-
+        //Send the table to SecondActivity:
         secondButton.setOnClickListener( click -> startActivity( nextPage ));
 
     }
