@@ -5,4 +5,11 @@
     <string name="hint"> This hint disappears </string>
     <string name="switchItUp">This is a switch</string>
     <string name="radio"> Radio Buttion</string>
+    <string name="item1">1</string>
+    <string name="item2">2</string>
+    <string name="item3">3</string>
+    <string name="item4">4</string>
+    <string name="item5">5</string>
+    <string name="item6">6</string>
+    <string name="item7">7</string>
 </resources>

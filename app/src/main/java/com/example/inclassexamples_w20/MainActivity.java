@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         // setContentView loads objects onto the screen.
         // Before this function, the screen is empty.
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_linear);
 
         //Now that the screen was loaded, use findViewByid() to
         // get load the objects in Java:
@@ -38,7 +40,10 @@ public class MainActivity extends AppCompatActivity {
         CheckBox cb = findViewById(R.id.checkb);
         cb.setOnCheckedChangeListener( (compoundButton, b) -> {
 
-            Toast.makeText(MainActivity.this, "Checkbox is " + b, Toast.LENGTH_LONG).show();
+          //  Toast.makeText(MainActivity.this, "Checkbox is " + b, Toast.LENGTH_LONG).show();
+            Snackbar.make(theEdit, "Checkbox is " + b, Snackbar.LENGTH_LONG)
+                    .setAction("Undo", click-> compoundButton.setChecked( !b ))
+                    .show();
 
         });
     }

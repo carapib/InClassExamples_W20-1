@@ -6,11 +6,11 @@
     android:layout_height="match_parent">
 
 
-    <!--Button android:id="@+id/button1"
+    <Button android:id="@+id/button1"
 
         android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-        android:layout_columnWeight="2"
+        android:layout_columnWeight="3"
         android:text="@string/item1" />
 
     <Button android:id="@+id/button2"
@@ -31,6 +31,8 @@
     <Button android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:layout_row="1"
         android:layout_columnWeight="1"
         android:text="@string/item4" />
 
@@ -50,6 +52,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
-        android:text="@string/item7" /-->
+        android:text="@string/item7" />
 
 </GridLayout>
