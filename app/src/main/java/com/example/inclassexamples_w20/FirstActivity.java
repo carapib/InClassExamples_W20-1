@@ -24,7 +24,7 @@ public class FirstActivity extends AppCompatActivity {
         EditText editText = findViewById(R.id.inputText);
         editText.setText(prefs.getString("ReserveName", "Enter something"));
 
-        Button saveButton = findViewById(R.id.buttonToSecond);
+        Button saveButton = findViewById(R.id.saveButton);
 
         saveButton.setOnClickListener( bt -> saveSharedPrefs( editText.getText().toString()) );
 
