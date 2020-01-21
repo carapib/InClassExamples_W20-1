@@ -20,14 +20,13 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         prefs = getSharedPreferences("FileName", Context.MODE_PRIVATE);
-
-        EditText editText = findViewById(R.id.inputText);
-        editText.setText(prefs.getString("ReserveName", "Enter something"));
+        String savedString = prefs.getString("ReserveName", "Enter something");
+        EditText typeField = findViewById(R.id.inputText);
+        typeField.setText(savedString);
 
         Button saveButton = findViewById(R.id.saveButton);
 
-        saveButton.setOnClickListener( bt -> saveSharedPrefs( editText.getText().toString()) );
-
+        saveButton.setOnClickListener( bt -> saveSharedPrefs( typeField.getText().toString()) );
     }
 
     @Override
