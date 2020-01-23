@@ -1,6 +1,8 @@
 package com.example.inclassexamples_w20;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +29,12 @@ public class FirstActivity extends AppCompatActivity {
 
         ListView myList = findViewById(R.id.theListView);
         myList.setAdapter( myAdapter = new MyListAdapter());
+
+        SwipeRefreshLayout swiper = findViewById(R.id.refresher);
+        swiper.setOnRefreshListener( () -> {
+
+            swiper.setRefreshing(false);
+        });
     }
 
     private class MyListAdapter extends BaseAdapter{

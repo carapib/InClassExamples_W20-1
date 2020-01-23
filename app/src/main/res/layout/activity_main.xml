@@ -9,9 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <ListView
         android:id="@+id/theListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>
