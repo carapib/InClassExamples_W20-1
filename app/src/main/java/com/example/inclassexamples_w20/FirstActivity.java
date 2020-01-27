@@ -1,20 +1,22 @@
 package com.example.inclassexamples_w20;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class FirstActivity extends AppCompatActivity {
-    private ArrayList<String> elements = new ArrayList<>( Arrays.asList( /*Empty*/ ) );
+    private ArrayList<String> elements = new ArrayList<>( Arrays.asList( "One", "Two" ) );
     private MyListAdapter myAdapter;
 
     @Override
@@ -25,7 +27,22 @@ public class FirstActivity extends AppCompatActivity {
         // Before this function, the screen is empty.
         setContentView(R.layout.activity_main);
 
-        ListView myList = findViewById(R.id.theListView);
+        Button addButton = findViewById(R.id.addButton);
+        addButton.setOnClickListener( click -> {
+            View extraViewStuff = getLayoutInflater().inflate(R.layout.row_layout, null) ;
+            ((TextView)extraViewStuff.findViewById(R.id.textGoesHere)).setText("More stuff");
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder.setTitle("A title").setMessage("My message")
+                    .setPositiveButton("Yes", (ck1, arg1) -> { elements.add("Hi"); myAdapter.notifyDataSetChanged(); })
+                    .setNegativeButton("No", (c2,arg2) -> {  })
+                    .setNeutralButton("Maybe", (c3, arg3) -> {  })
+                    .setView(extraViewStuff )
+                    .create().show();
+
+        });
+
+        Spinner myList = findViewById(R.id.theListView);
         myList.setAdapter( myAdapter = new MyListAdapter());
     }
 
