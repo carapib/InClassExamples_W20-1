@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -20,7 +21,7 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         prefs = getSharedPreferences("FileName", Context.MODE_PRIVATE);
-        String savedString = prefs.getString("ReserveName", "Enter something");
+        String savedString = prefs.getString("ReserveName", "reserve not found");
         EditText typeField = findViewById(R.id.inputText);
         typeField.setText(savedString);
 
@@ -39,11 +40,14 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        Log.e("First Activity", "In onStart()");
+
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        Log.d("First Activity", "In onPause()");
     }
 
     @Override
