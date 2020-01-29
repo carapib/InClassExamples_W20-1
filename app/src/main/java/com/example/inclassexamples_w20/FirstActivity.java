@@ -30,11 +30,11 @@ public class FirstActivity extends AppCompatActivity {
         ListView myList = findViewById(R.id.theListView);
         myList.setAdapter( myAdapter = new MyListAdapter());
 
-        SwipeRefreshLayout swiper = findViewById(R.id.refresher);
+/*        SwipeRefreshLayout swiper = findViewById(R.id.refresher);
         swiper.setOnRefreshListener( () -> {
 
             swiper.setRefreshing(false);
-        });
+        });*/
     }
 
     private class MyListAdapter extends BaseAdapter{
