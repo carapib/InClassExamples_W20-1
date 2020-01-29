@@ -29,20 +29,10 @@ public class FirstActivity extends AppCompatActivity {
 
         Button addButton = findViewById(R.id.addButton);
         addButton.setOnClickListener( click -> {
-            View extraViewStuff = getLayoutInflater().inflate(R.layout.row_layout, null) ;
-            ((TextView)extraViewStuff.findViewById(R.id.textGoesHere)).setText("More stuff");
+            elements.add("Hi");
+            myAdapter.notifyDataSetChanged(); });
 
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            alertDialogBuilder.setTitle("A title").setMessage("My message")
-                    .setPositiveButton("Yes", (ck1, arg1) -> { elements.add("Hi"); myAdapter.notifyDataSetChanged(); })
-                    .setNegativeButton("No", (c2,arg2) -> {  })
-                    .setNeutralButton("Maybe", (c3, arg3) -> {  })
-                    .setView(extraViewStuff )
-                    .create().show();
-
-        });
-
-        Spinner myList = findViewById(R.id.theListView);
+        ListView myList = findViewById(R.id.theListView);
         myList.setAdapter( myAdapter = new MyListAdapter());
     }
 
