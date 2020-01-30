@@ -30,10 +30,16 @@ public class FirstActivity extends AppCompatActivity {
         Button addButton = findViewById(R.id.addButton);
         addButton.setOnClickListener( click -> {
             elements.add("Hi");
-            myAdapter.notifyDataSetChanged(); });
+            myAdapter.notifyDataSetChanged();
+            });
 
         ListView myList = findViewById(R.id.theListView);
         myList.setAdapter( myAdapter = new MyListAdapter());
+        myList.setOnItemClickListener( (parent, view, pos, id) -> {
+
+            elements.remove(pos);
+            myAdapter.notifyDataSetChanged();
+        }   );
     }
 
     private class MyListAdapter extends BaseAdapter{
