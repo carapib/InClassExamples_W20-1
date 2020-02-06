@@ -2,7 +2,8 @@ package com.example.inclassexamples_w20;
 
 public class Contact {
 
-    //Android Studio hint: to create getter and setter, put mouse on variable and click "alt+insert"
+    //Android Studio hint: to create getter and setter, put mouse on variable and
+    // click "alt+insert" in Windows, "control+return" on Macintosh
     protected String email, name;
     protected long id;
 
