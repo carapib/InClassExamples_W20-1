@@ -15,17 +15,18 @@
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/email"
-        android:layout_below="@id/name"
+        android:layout_below="@id/row_name"
         android:text="Email" />
 
     <EditText
         android:layout_below="@id/row_name"
         android:id="@+id/row_email"
         android:layout_toRightOf="@id/email"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_height="wrap_content" />
 
     <TextView
