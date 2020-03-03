@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Xml;
 
+import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import java.io.BufferedReader;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -22,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MyHTTPRequest req = new MyHTTPRequest();
-        req.execute("http://torunski.ca/CST2335_XML.xml");  //Type 1
+        req.execute("http://api.openweathermap.org/data/2.5/uvi?appid=7e943c97096a9784391a981c4d878b22&lat=45.348945&lon=-75.759389");  //Type 1
     }
     //Type1     Type2   Type3
     private class MyHTTPRequest extends AsyncTask< String, Integer, String>
@@ -42,55 +45,31 @@ public class MainActivity extends AppCompatActivity {
                 InputStream response = urlConnection.getInputStream();
 
 
+                //JSON reading:
+                //Build the entire string response:
+                BufferedReader reader = new BufferedReader(new InputStreamReader(response, "UTF-8"), 8);
+                StringBuilder sb = new StringBuilder();
 
-                //From part 3: slide 19
-                XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-                factory.setNamespaceAware(false);
-                XmlPullParser xpp = factory.newPullParser();
-                xpp.setInput( response  , "UTF-8");
-
-
-                //From part 3, slide 20
-                String parameter = null;
-
-                int eventType = xpp.getEventType(); //The parser is currently at START_DOCUMENT
-
-                while(eventType != XmlPullParser.END_DOCUMENT)
+                String line = null;
+                while ((line = reader.readLine()) != null)
                 {
-
-                    if(eventType == XmlPullParser.START_TAG)
-                    {
-                        //If you get here, then you are pointing at a start tag
-                        if(xpp.getName().equals("Weather"))
-                        {
-                            //If you get here, then you are pointing to a <Weather> start tag
-                            String outlook = xpp.getAttributeValue(null,    "outlook");
-                            String windy = xpp.getAttributeValue(null, "windy");
-                        }
-
-                        else if(xpp.getName().equals("AMessage"))
-                        {
-                            parameter = xpp.getAttributeValue(null, "message"); // this will run for <AMessage message="parameter" >
-                        }
-                        else if(xpp.getName().equals("Weather"))
-                        {
-                            parameter = xpp.getAttributeValue(null, "outlook"); //this will run for <Weather outlook="parameter"
-                            parameter = xpp.getAttributeValue(null, "windy"); //this will run for <Weather windy="paramter"  >
-                        }
-                        else if(xpp.getName().equals("Temperature"))
-                        {
-                            xpp.next(); //move the pointer from the opening tag to the TEXT event
-                            parameter = xpp.getText(); // this will return  20
-                        }
-                    }
-                    eventType = xpp.next(); //move to the next xml event and store it in a variable
+                    sb.append(line + "\n");
                 }
+                String result = sb.toString(); //result is the whole string
 
+
+                // convert string to JSON:
+                JSONObject uvReport = new JSONObject(result);
+
+                //get the double associated with "value"
+                double uvRating = uvReport.getDouble("value");
+
+                Log.i("MainActivity", "The uv is now: " + uvRating) ;
 
             }
             catch (Exception e)
             {
-                Log.e("Error", e.getMessage());
+
             }
 
             return "Done";
