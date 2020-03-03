@@ -1,21 +1,5 @@
 <resources>
     <string name="app_name">InClassExamples_W20</string>
     <string name="hello"> Hello world</string>
-    <string name="checkbox"> This is checkbox</string>
-    <string name="hint"> This hint disappears </string>
-    <string name="switchItUp">This is a switch</string>
-    <string name="radio"> Radio Buttion</string>
-    <string name="activity2">Go to second activity</string>
-    <string name="item2">Go to second activity</string>
-    <string name="sendEmail">Send an email</string>
-    <string name="insert">Insert</string>
-    <string name="toastMessage1">You sent name %s, age %d, and typed: %s</string>
 
-    <string name="typeHere">Type here</string>
-    <string name="typeHereToSave">Type something here and it will be saved for next time</string>
-    <string name="Name">Name</string>
-    <string name="Email">Email</string>
-    <string name="ID">id</string>
-    <string name="update">update</string>
-    <string name="delete">delete</string>
 </resources>
