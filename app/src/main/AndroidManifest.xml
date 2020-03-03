@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.inclassexamples_w20">
 
-    <uses-permission android:name="android.permission.INTERNET" /> ​
+    <uses-feature android:name="android.hardware.type.watch"/>
+
 
     <application
         android:allowBackup="true"
