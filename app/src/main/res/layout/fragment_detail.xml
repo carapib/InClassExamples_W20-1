@@ -21,6 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Delete"
-        android:id="@+id/deleteButton"/>
+        android:text="Finish"
+        android:id="@+id/finishButton"/>
 </RelativeLayout>
