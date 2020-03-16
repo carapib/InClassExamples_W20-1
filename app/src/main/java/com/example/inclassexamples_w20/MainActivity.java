@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MyHTTPRequest req = new MyHTTPRequest();
-        req.execute("http://torunski.ca/CST2335.xml");  //Type 1
+        req.execute("http://carapiet.com/files/CST2335_XML.xml");  //Type 1
     }
                                                 //Type1     Type2   Type3
     private class MyHTTPRequest extends AsyncTask< String, Integer, String>
