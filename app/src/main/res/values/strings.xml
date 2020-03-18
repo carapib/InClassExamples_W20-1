@@ -1,6 +1,21 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">InClassExamples_W20</string>
     <string name="aButton"> Hello there</string>
     <string name="Name">Name</string>
     <string name="search">Search</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_testing_mavogation_delete" tools:keep="@string/title_activity_testing_mavogation_delete">TestingMavogationDelete</string>
+    <string name="navigation_drawer_open" tools:keep="@string/navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close" tools:keep="@string/navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title" tools:keep="@string/nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle" tools:keep="@string/nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc" tools:keep="@string/nav_header_desc">Navigation header</string>
+    <string name="action_settings" tools:keep="@string/action_settings">Settings</string>
+
+    <string name="menu_home" tools:keep="@string/menu_home">Home</string>
+    <string name="menu_gallery" tools:keep="@string/menu_gallery">Gallery</string>
+    <string name="menu_slideshow" tools:keep="@string/menu_slideshow">Slideshow</string>
+
+    <string name="home_second" tools:keep="@string/home_second">Home Second</string>
 </resources>

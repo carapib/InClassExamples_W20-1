@@ -1,5 +1,5 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">InClassExamples_W20</string>
-    <string name="hello"> Hello germans</string>
+    <string name="hello" tools:keep="@string/hello"> Hello germans</string>
 
     </resources>
