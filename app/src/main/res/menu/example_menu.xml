@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:id="@+id/item1"
+        android:title="@string/Name"
+        android:icon="@drawable/freeicon"
+        android:orderInCategory="100"
+        app:showAsAction="always"/>  <!-- This uses showAsAction=always, so look at icon= parameter -->
+
+
+    <item android:id="@+id/search_item"
+        android:orderInCategory="50"
+        app:actionViewClass="android.widget.SearchView"
+        android:icon="@android:drawable/ic_search_category_default"
+        app:showAsAction="always|collapseActionView"
+        android:title="@string/search"/>    <!-- This uses showAsAction=always, so look at icon= parameter -->
+
+
+    <item android:id="@+id/help_item"
+        android:icon="@drawable/global"
+        android:title="Look at globe"
+        app:showAsAction="never"
+        android:orderInCategory="400"/> <!-- This uses showAsAction=never, so look at title= parameter -->
+
+    <item android:id="@+id/mail"
+        android:icon="@drawable/mail"
+        android:orderInCategory="75"
+        app:showAsAction="always"
+        android:title="Not used, since showAsAction=always"/>
+</menu>
